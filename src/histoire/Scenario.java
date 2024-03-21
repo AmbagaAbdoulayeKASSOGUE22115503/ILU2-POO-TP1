@@ -31,6 +31,8 @@ public class Scenario {
 			System.err.println("Message d'erreur :"+e.getMessage());
 		}
 
+		try
+		{
 		System.out.println(village.rechercherVendeursProduit("fleurs"));
 		System.out.println(village.installerVendeur(bonemine, "fleurs", 20));
 		System.out.println(village.rechercherVendeursProduit("fleurs"));
@@ -45,6 +47,15 @@ public class Scenario {
 		System.out.println(etalFleur.acheterProduit(15, assurancetourix));
 		System.out.println(village.partirVendeur(bonemine));
 		System.out.println(village.afficherMarche());
+		
+		} catch (NullPointerException e) {
+			System.err.println("Message d'erreur: "+e.getMessage());
+		} catch (IllegalArgumentException e) {
+        	System.err.println("Erreur lors de l'achat : " + e.getMessage());
+        } catch (IllegalStateException e) {
+        	System.err.println("Erreur lors de l'achat : " + e.getMessage());
+		}
+
 	}
 
 }
